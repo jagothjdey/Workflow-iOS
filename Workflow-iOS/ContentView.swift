@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("I am inside feature branch")
+        Text("I am inside feature branch. Check workflow try 1")
     }
 }
 
