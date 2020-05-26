@@ -7,12 +7,12 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
-    runs-on: macos-latest
-
+  test:
+    name: Test
+    runs-on: macOS-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X', 'platform=tvOS Simulator,OS=12.2,name=Apple TV 4K']
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: swift build -v
-   
+      - name: Checkout
+        uses: actions/checkout@master
