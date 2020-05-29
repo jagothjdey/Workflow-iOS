@@ -14,8 +14,8 @@
 		2900382B247D06F3007405B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2900382A247D06F3007405B4 /* Preview Assets.xcassets */; };
 		2900382E247D06F3007405B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2900382C247D06F3007405B4 /* LaunchScreen.storyboard */; };
 		29003839247D06F4007405B4 /* Workflow_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29003838247D06F4007405B4 /* Workflow_iOSUITests.swift */; };
-		29105A01247F8346008786EC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29105A00247F8345008786EC /* ViewModel.swift */; };
 		29105A04247F8604008786EC /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 29105A03247F8604008786EC /* GridStack */; };
+		29105A102480E964008786EC /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29105A0F2480E964008786EC /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,7 @@
 		29003834247D06F4007405B4 /* Workflow-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Workflow-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29003838247D06F4007405B4 /* Workflow_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workflow_iOSUITests.swift; sourceTree = "<group>"; };
 		2900383A247D06F4007405B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29105A00247F8345008786EC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		29105A0F2480E964008786EC /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,6 @@
 				2900382C247D06F3007405B4 /* LaunchScreen.storyboard */,
 				2900382F247D06F3007405B4 /* Info.plist */,
 				29003829247D06F3007405B4 /* Preview Content */,
-				29105A00247F8345008786EC /* ViewModel.swift */,
 			);
 			path = "Workflow-iOS";
 			sourceTree = "<group>";
@@ -106,6 +105,7 @@
 		29003837247D06F4007405B4 /* Workflow-iOSUITests */ = {
 			isa = PBXGroup;
 			children = (
+				29105A0F2480E964008786EC /* SnapshotHelper.swift */,
 				29003838247D06F4007405B4 /* Workflow_iOSUITests.swift */,
 				2900383A247D06F4007405B4 /* Info.plist */,
 			);
@@ -221,7 +221,6 @@
 			files = (
 				29003822247D06EC007405B4 /* AppDelegate.swift in Sources */,
 				29003824247D06EC007405B4 /* SceneDelegate.swift in Sources */,
-				29105A01247F8346008786EC /* ViewModel.swift in Sources */,
 				29003826247D06ED007405B4 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29003839247D06F4007405B4 /* Workflow_iOSUITests.swift in Sources */,
+				29105A102480E964008786EC /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Workflow-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Workflow-iOS-jjd";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -403,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Workflow-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Workflow-iOS-jjd";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

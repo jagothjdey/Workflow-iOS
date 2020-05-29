@@ -11,33 +11,44 @@ import XCTest
 class Workflow_iOSUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+   func testInitialViewState() {
         let app = XCUIApplication()
+        setupSnapshot(app)
+        app.launch()
+        
+        let textField      = app.textFields.element
+        let enterNameLabel = app.staticTexts["enterNameLabel"]
+        let greeterLabel   = app.staticTexts["greetingTextLabel"]
+        
+        XCTAssert(enterNameLabel.exists)
+        XCTAssertEqual(enterNameLabel.label, "Please enter your name below")
+
+        XCTAssert(greeterLabel.exists)
+        XCTAssert(greeterLabel.label.isEmpty)
+
+        XCTAssert(textField.exists)
+        XCTAssertEqual(textField.placeholderValue, "Your name")
+        snapshot("1st")
+    }
+    
+    func testGreeter() {
+        let app = XCUIApplication()
+        setupSnapshot(app)
         app.launch()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
+        let textLabel = app.staticTexts["greetingTextLabel"]
+        let textField = app.textFields.element
+        
+        textField.tap()
+        textField.typeText("J")
+        textField.typeText("o")
+        textField.typeText("n")
+        textField.typeText("y")
+        
+        XCTAssertEqual(textLabel.label, "Nice to meet you, Jony.")
+        snapshot("2nd")
     }
 }

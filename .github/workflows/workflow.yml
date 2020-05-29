@@ -21,5 +21,3 @@ jobs:
     needs: test
   release:
     needs: build
-  slack:
-    needs: release
