@@ -10,9 +10,19 @@ jobs:
   test:
     name: Test
     runs-on: macOS-latest
-    strategy:
-        matrix:
-          destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X', 'platform=tvOS Simulator,OS=12.2,name=Apple TV 4K']
+    timeout-minutes: 45
+
     steps:
       - name: Checkout
         uses: actions/checkout@master
+
+      - name: Install Fastlane
+        run: gem install fastlane
+
+      - name: Install Bundler
+        run: |
+          gem install bundler:1.17.3
+          bundle update --bundler
+
+      - name: Install Cocoapods
+        run: sudo gem install cocoapods
