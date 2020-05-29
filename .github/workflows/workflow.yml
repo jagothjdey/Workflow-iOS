@@ -16,3 +16,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+
+  build:
+    needs: test
+  release:
+    needs: build
+  slack:
+    needs: release
