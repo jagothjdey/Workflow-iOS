@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		2900382B247D06F3007405B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2900382A247D06F3007405B4 /* Preview Assets.xcassets */; };
 		2900382E247D06F3007405B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2900382C247D06F3007405B4 /* LaunchScreen.storyboard */; };
 		29003839247D06F4007405B4 /* Workflow_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29003838247D06F4007405B4 /* Workflow_iOSUITests.swift */; };
+		29105A01247F8346008786EC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29105A00247F8345008786EC /* ViewModel.swift */; };
+		29105A04247F8604008786EC /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 29105A03247F8604008786EC /* GridStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 		29003834247D06F4007405B4 /* Workflow-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Workflow-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29003838247D06F4007405B4 /* Workflow_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workflow_iOSUITests.swift; sourceTree = "<group>"; };
 		2900383A247D06F4007405B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29105A00247F8345008786EC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29105A04247F8604008786EC /* GridStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,7 @@
 				2900382C247D06F3007405B4 /* LaunchScreen.storyboard */,
 				2900382F247D06F3007405B4 /* Info.plist */,
 				29003829247D06F3007405B4 /* Preview Content */,
+				29105A00247F8345008786EC /* ViewModel.swift */,
 			);
 			path = "Workflow-iOS";
 			sourceTree = "<group>";
@@ -123,6 +128,9 @@
 			dependencies = (
 			);
 			name = "Workflow-iOS";
+			packageProductDependencies = (
+				29105A03247F8604008786EC /* GridStack */,
+			);
 			productName = "Workflow-iOS";
 			productReference = 2900381E247D06EC007405B4 /* Workflow-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 29003815247D06EC007405B4;
+			packageReferences = (
+				29105A02247F8604008786EC /* XCRemoteSwiftPackageReference "GridStack" */,
+			);
 			productRefGroup = 2900381F247D06EC007405B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,6 +221,7 @@
 			files = (
 				29003822247D06EC007405B4 /* AppDelegate.swift in Sources */,
 				29003824247D06EC007405B4 /* SceneDelegate.swift in Sources */,
+				29105A01247F8346008786EC /* ViewModel.swift in Sources */,
 				29003826247D06ED007405B4 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -348,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -469,6 +481,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29105A02247F8604008786EC /* XCRemoteSwiftPackageReference "GridStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pietropizzi/GridStack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29105A03247F8604008786EC /* GridStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29105A02247F8604008786EC /* XCRemoteSwiftPackageReference "GridStack" */;
+			productName = GridStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29003816247D06EC007405B4 /* Project object */;
 }
