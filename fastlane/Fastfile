@@ -5,4 +5,10 @@ platform :ios do
   lane :screenshot do
     snapshot
   end
+
+  desc "Deploying to App store"
+  lane :release do
+    screenshot
+    increment_build_number
+  end
 end

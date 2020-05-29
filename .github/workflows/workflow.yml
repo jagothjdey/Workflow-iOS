@@ -17,7 +17,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-  build:
-    needs: test
-  release:
-    needs: build
+      - name: Bundle Install
+        run: bundle install
+
+    - name: Start xcodebuild test
+      run: xcodebuild clean test -project Workflow-iOS.xcodeproj -scheme Workflow-iOS -destination "platform=iOS Simulator,name=iPhone 11 Pro"
